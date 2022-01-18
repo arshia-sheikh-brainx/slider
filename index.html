@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css.map"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      .product-carousal {
+        background-color: #f6f6f6;
+        padding: 50px;
+      }
+      .product-title,
+      .product-price {
+        font: normal normal bold 32px/34px Montserrat;
+        letter-spacing: 0px;
+        text-transform: uppercase;
+        margin: 0;
+      }
+      .product-price {
+        color: #ec9a0c;
+      }
+      .product-image img {
+        max-width: 167px;
+        text-align: center;
+        margin-top: 10px;
+      }
+      .product-buy-btn button {
+        font: normal normal 300 13px/25px Montserrat;
+        letter-spacing: 0.91px;
+        display: flex;
+        color: #ffffff;
+        text-transform: uppercase;
+        text-align: left;
+        border: none;
+        padding: 0;
+      }
+      button span {
+        background: #ec9a0c;
+        padding: 8px 35px;
+      }
+      button svg {
+        background: #686868;
+        margin: 0;
+        padding: 14.5px;
+      }
+      .product-container.slick-current.slick-active .product-card {
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+      }
+      .product-container.slick-current.slick-active .product-image {
+        align-self: center;
+      }
+
+      .product-container.slick-current.slick-active {
+         width: 8% !important; 
+        /* border-radius: 20px; */
+        /* border-radius: 0 25px 97px 0; */
+        /* width: 498px !important; */
+        background-color: #fff;
+        clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+        /* clip-path: inset(20px 20px 50px round 66px 100px); */
+      }
+      .slick-track {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .slick-list.draggable {
+        padding: 60px 0;
+      }
+      .slick-slide.slick-active:not(.slick-current) {
+        /*clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
+        transform: skewX(-10deg);
+        padding: 0;
+        background: #fff;
+        border-radius: 20px;
+        margin: 10px;
+      }
+      .slick-slide.slick-active:not(.slick-current) .product-card {
+        text-align: center;
+        padding: 10px;
+      }
+
+      .slick-slide.slick-active:not(.slick-current) .product-image img {
+        max-width: 107px;
+        margin: 20px auto;
+      }
+      .slick-track {
+        align-items: center;
+      }
+      .slick-slide.slick-active:not(.slick-current) .product-title,
+      .slick-slide.slick-active:not(.slick-current) .product-price {
+        font-size: 23px;
+      }
+      .slick-slide.slick-active:not(.slick-current) .product-buy-btn {
+        display: none;
+      }
+      .slick-slide {
+      transition: all ease-in-out .3s;
+      opacity: .2;
+    }
+
+    .slick-active {
+      opacity: .5;
+    }
+
+    .slick-current {
+      opacity: 1;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="featured-product-section">
+      <div class="product-carousal">
+        <div class="product-container">
+          <div class="product-card">
+            <div class="product-card-content">
+              <h2 class="product-title">Lorem Ipsum</h2>
+              <div class="product-price">$90000</div>
+              <div class="product-buy-btn">
+                <button>
+                  <span>Buy</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="11.241"
+                    height="12.206"
+                    viewBox="0 0 11.241 12.206"
+                  >
+                    <g id="right-arrow" transform="translate(-20.79 0.545)">
+                      <g
+                        id="Group_73"
+                        data-name="Group 73"
+                        transform="translate(21.336 0.003)"
+                      >
+                        <path
+                          id="Path_56"
+                          data-name="Path 56"
+                          d="M213.751.2a.242.242,0,0,0-.342.342l5.144,5.145-5.145,5.144a.242.242,0,1,0,.336.348l.006-.006,5.315-5.315a.242.242,0,0,0,0-.342Z"
+                          transform="translate(-208.987 -0.134)"
+                          fill="#fff"
+                          stroke="#fff"
+                          stroke-width="1"
+                        ></path>
+                        <path
+                          id="Path_57"
+                          data-name="Path 57"
+                          d="M27.067,5.517,21.752.2a.242.242,0,0,0-.342.342l5.144,5.145L21.41,10.832a.242.242,0,0,0,.336.348l.006-.006,5.315-5.315A.242.242,0,0,0,27.067,5.517Z"
+                          transform="translate(-21.336 -0.134)"
+                          fill="#fff"
+                          stroke="#fff"
+                          stroke-width="1"
+                        ></path>
+                      </g>
+                      <path
+                        id="Path_58"
+                        data-name="Path 58"
+                        d="M213.7,11.265a.242.242,0,0,1-.171-.413l5.145-5.144L213.529.564a.242.242,0,0,1,.342-.342l5.315,5.315a.242.242,0,0,1,0,.342l-5.315,5.315A.241.241,0,0,1,213.7,11.265Z"
+                        transform="translate(-187.771 -0.152)"
+                        fill="#fff"
+                        stroke="#fff"
+                        stroke-width="1"
+                      ></path>
+                      <path
+                        id="Path_59"
+                        data-name="Path 59"
+                        d="M21.7,11.113a.242.242,0,0,1-.171-.413l5.145-5.144L21.529.413a.242.242,0,1,1,.342-.342l5.315,5.315a.242.242,0,0,1,0,.342l-5.315,5.315A.242.242,0,0,1,21.7,11.113Z"
+                        transform="translate(-0.119 0)"
+                        fill="#fff"
+                        stroke="#fff"
+                        stroke-width="1"
+                      ></path>
+                    </g>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="product-image">
+              <img
+                src="C:\Users\BrainX Shopify\Downloads\product-image\Group 41354.png"
+                alt=""
+                srcset=""
+              />
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+
+    
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".product-carousal").slick({
+          rows: 1,
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          autoplay: false,
+          arrows:true,
+          autoplaySpeed: 2000,
+          responsive: [
+    {
+      breakpoint: 1000,
+      settings: {
+        slidesToShow: 2
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1
+      }
+    }
+  ]
+        });
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  </body>
+</html>
